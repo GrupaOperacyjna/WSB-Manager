@@ -2,7 +2,7 @@
  * kapat@kapat.pl
  */
 
-package WSBManager.group3;
+package WSBManager;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;

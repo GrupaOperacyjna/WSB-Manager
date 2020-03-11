@@ -2,7 +2,7 @@
  * Patryk
  */
 
-package WSBManager.group3;
+package WSBManager;
 
 public class Books {
 

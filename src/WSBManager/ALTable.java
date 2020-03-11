@@ -1,7 +1,7 @@
 /*
  * kapat@kapat.pl
  */
-package WSBManager.group3;
+package WSBManager;
 
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
