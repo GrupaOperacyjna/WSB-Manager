@@ -72,15 +72,17 @@ public class MenuBar extends JMenuBar implements ActionListener{
 		jmenuAbout.add(jmenuAboutUs);
 		return jmenuAbout;
 	}
-
+	
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		String s = e.getActionCommand();
 		System.out.println(s);
 
 		// Dodawanie nowego rekordu
 		if (s.equals(MenuBar.strADD)) {
-			String msg = "The option will come soon ...";
-			JOptionPane.showMessageDialog(app, msg, "", JOptionPane.INFORMATION_MESSAGE);
+			new AddBookFrame();
+//			String msg = "The option will come soon ...";
+//			JOptionPane.showMessageDialog(app, msg, "", JOptionPane.INFORMATION_MESSAGE);
 //			app.getTableModel().addRow(new Books());
 		}
 
