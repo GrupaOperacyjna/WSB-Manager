@@ -29,9 +29,9 @@ public class MenuBar extends JMenuBar implements ActionListener{
 	private JMenu jmenuFile;
 	private JMenuItem jmADD;
 	private JMenuItem jmDEL;
-	private AppFrame app;
+	private WSBManager app;
 
-	public MenuBar(AppFrame app) {
+	public MenuBar(WSBManager app) {
 		this.app = app;
 		
 		jmenuFile = new JMenu(strFile);

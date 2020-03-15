@@ -12,8 +12,9 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import WSBManager.Authors;
 
-public class AppFrame extends JFrame {
+public class WSBManager extends JFrame {
 	/**
 	 * 
 	 */
@@ -21,12 +22,13 @@ public class AppFrame extends JFrame {
 	private String appName = "WSB Manager";
 	private JScrollPane spane;
 	private JTable table;
-	private String[] colName = { "Autor", "Tytu³‚", "Cena", "Ok³adka" };
-	private List<Books> books;
+	private String[] colName = { "Born", "Name", "Surname" };
+//	private List<Books> books;
+	private List<Authors> books;
 	private TableModelBooks tableModel;
 	private String property;
 
-	public AppFrame() {
+	public WSBManager() {
 		property = System.getProperty("user.dir");
 		System.out.println(property);
 		initArrayList();
@@ -34,7 +36,7 @@ public class AppFrame extends JFrame {
 		showGUI();
 	}
 
-	public List<Books> getBooks() {
+	public List<Authors> getBooks() {
 		return books;
 	}
 
@@ -47,9 +49,12 @@ public class AppFrame extends JFrame {
 	}
 
 	public void initArrayList() {
-		books = new ArrayList<Books>();
-//		books.add(new Books("a", "a1", 0, "/home/kpt/Dropbox/Programowanie/GUI7_KT_S14320/src/zad3/img.jpg"));
+		books = new ArrayList<Authors>();
+//		books = new ArrayList<Books>();
+//		books.add(new Books(2020, "Test imie", "Test Nazwisko"));
 //		books.add(new Books("B", "B2", 100, "/home/kpt/Dropbox/Programowanie/GUI7_KT_S14320/src/zad3/img.jpg"));
+	    books.add(new Authors(2020, "Test", "Test surname"));
+	    System.out.println(books.get(0));
 	}
 
 	/**

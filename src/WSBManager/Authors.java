@@ -32,14 +32,21 @@ public class Authors {
 		this.surname = surname;
 	}
 	
+	public Authors() {
+		this.born=0;
+		this.name="Empty Name";
+		this.surname="Empty Surname";
+	}
+	
 	// Konstruktor domyslny - tamten bez argumentów by³ wywo³ywany domyœlnie
 	public Authors(int born, String name, String surname) {
 		this.born=born;
 		this.name=name;
 		this.surname=surname;
 	}
-
-	public String toStringoverride() {
+	
+	@Override
+	public String toString() {
 		return "[" + born + "]-" + name + "-" + surname;
 	}
 }
