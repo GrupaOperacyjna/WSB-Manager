@@ -8,7 +8,6 @@ public class Authors {
 	private String name;
 	private String surname;
 	
-
 	public int getBorn() {
 		return born;
 	}
