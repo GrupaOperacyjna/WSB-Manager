@@ -7,6 +7,7 @@ public class Authors {
 	private int born;
 	private String name;
 	private String surname;
+	
 
 	public int getBorn() {
 		return born;
