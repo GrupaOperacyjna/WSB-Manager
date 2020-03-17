@@ -1,4 +1,4 @@
-package klasy;
+package WSBManager;
 
 class Book {
 	 class Date {
