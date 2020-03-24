@@ -1,10 +1,6 @@
-/*
- * Patryk
- */
-
 package WSBManager;
 
-public class Books {
+class Book {
 	 class Date {
 		 
 		 private int day, month, year;
@@ -56,7 +52,7 @@ public class Books {
 		 }
 	 public String toString(int zamiana) {
 		 String zamiana2;
-		 zamiana2 = (zamiana2+zamiana);
+		 zamiana2 = zamiana2+zamiana;
 		 return zamiana2;
 	 }
 }
