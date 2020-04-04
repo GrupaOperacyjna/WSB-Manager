@@ -1,12 +1,17 @@
 package WSBManager;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,6 +20,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.SpringLayout;
+import javax.swing.SwingConstants;
+import javax.swing.border.Border;
 
 /**
  * Klasa do wyœwietlania menu dodawania ksi¹zki do bazy danych
@@ -35,25 +42,30 @@ public class AddBookFrame implements ActionListener {
 	private JTextField jtfielfAuthorSurname;
 	private JTextField jtfielfAuthorBorn;
 	
+	private static int top = 5;
+	private static int left = 5;
+	private static int bottom = 5;
+	private static int right = 5;
 	/**
 	 * Konstruktor Domyœlny
 	 */
 	public AddBookFrame() {
 		generateFrame();
 	}
-	
+
 	/**
 	 * Wywoa³anie Okna Aplikacji
 	 */
 	public void generateFrame() {
 		app = new JFrame();
 		app.setTitle("new title");
-//		app.setPreferredSize(new Dimension(400, 300));
+		app.setPreferredSize(new Dimension(250, 150));
 		BorderLayout mainBorder = new BorderLayout();
 		app.setLayout(mainBorder);
 
-		app.add(buttonJPanel(), BorderLayout.PAGE_END);
 		app.add(authorJPanel(), BorderLayout.CENTER);
+		app.add(buttonJPanel(), BorderLayout.PAGE_END);
+		
 
 		app.setVisible(true);
 		app.setLocationRelativeTo(null);
@@ -62,6 +74,7 @@ public class AddBookFrame implements ActionListener {
 	}
 
 	/**
+	 * Metoda wywo³uje panel z przyciskami ok, anuluj
 	 * @return zwraca panel z przyciskami dodaj, anuluj
 	 */
 
@@ -72,7 +85,6 @@ public class AddBookFrame implements ActionListener {
 		jbuttonAccept = new JButton("Dodaj");
 		jbuttonAccept.addActionListener(this);
 		;
-
 		jbuttonCancel = new JButton("Anuluj");
 		jbuttonCancel.addActionListener(this);
 
@@ -89,10 +101,11 @@ public class AddBookFrame implements ActionListener {
 	 */
 	private JPanel authorJPanel() {
 		JPanel panel = new JPanel();
+		panel.setBorder(BorderFactory.createEmptyBorder(top, left, bottom, right));
 
-		jlabelAuthorName = new JLabel("Imiê: ");
-		jlabelAuthorSurname = new JLabel("Nazwisko: ");
-		jlabelAuthorBorn = new JLabel("Data urodzenia: ");
+		jlabelAuthorName = new JLabel("Imiê ", SwingConstants.LEFT);
+		jlabelAuthorSurname = new JLabel("Nazwisko ", SwingConstants.LEFT);
+		jlabelAuthorBorn = new JLabel("Data urodzenia ",SwingConstants.LEFT);
 
 		panel.setLayout(new GridLayout(3, 1));
 
@@ -100,14 +113,14 @@ public class AddBookFrame implements ActionListener {
 		jtfielfAuthorSurname = new JTextField();
 		jtfielfAuthorBorn = new JTextField();
 
-		panel.add(jlabelAuthorName, 0, 0);
-		panel.add(jtfielfAuthorName, 0, 1);
+		panel.add(jlabelAuthorName);
+		panel.add(jtfielfAuthorName);
 
-		panel.add(jlabelAuthorSurname, 1, 0);
-		panel.add(jtfielfAuthorSurname, 1, 1);
+		panel.add(jlabelAuthorSurname);
+		panel.add(jtfielfAuthorSurname);
 
-		panel.add(jlabelAuthorBorn, 2, 0);
-		panel.add(jtfielfAuthorBorn, 2, 1);
+		panel.add(jlabelAuthorBorn);
+		panel.add(jtfielfAuthorBorn);
 		return panel;
 	}
 
@@ -115,7 +128,7 @@ public class AddBookFrame implements ActionListener {
 //		new AddBookFrame();
 //
 //	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String s = e.getActionCommand();
@@ -124,15 +137,33 @@ public class AddBookFrame implements ActionListener {
 		}
 
 		if (s.equals("Dodaj")) {
-			//TODO: Poprawiæ testy wywala p³¹d bo nie s¹ prowid³owo dane wprowadzone;
-			if (jtfielfAuthorBorn.getText().equals(null) || jtfielfAuthorName.getText().equals(null)
-					|| jtfielfAuthorSurname.getText().equals(null)) {
-
-			} else {
+			if (!(jtfielfAuthorBorn.getText().equals("") || jtfielfAuthorName.getText().equals("")
+					|| jtfielfAuthorSurname.getText().equals(""))) {
 				Authors test = new Authors(Integer.parseInt(jtfielfAuthorBorn.getText()), jtfielfAuthorName.getText(),
 						jtfielfAuthorSurname.getText());
 				System.out.println(test);
 				this.app.dispose();
+
+			} else {
+				//Kolorowanie
+				if (jtfielfAuthorBorn.getText().equals("")) {
+					jtfielfAuthorBorn.setBackground(Color.RED);
+				} else {
+					jtfielfAuthorBorn.setBackground(Color.white);
+				}
+
+				if (jtfielfAuthorName.getText().equals("")) {
+					jtfielfAuthorName.setBackground(Color.RED);
+				} else {
+					jtfielfAuthorName.setBackground(Color.white);
+				}
+				
+				
+				if (jtfielfAuthorSurname.getText().equals("")) {
+					jtfielfAuthorSurname.setBackground(Color.RED);
+				} else {
+					jtfielfAuthorSurname.setBackground(Color.white);
+				}
 			}
 		}
 

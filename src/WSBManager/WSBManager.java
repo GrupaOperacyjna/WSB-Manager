@@ -6,12 +6,15 @@ package WSBManager;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.WindowConstants;
+
 import WSBManager.Authors;
 
 public class WSBManager extends JFrame {
@@ -26,7 +29,6 @@ public class WSBManager extends JFrame {
 //	private List<Books> books;
 	private List<Authors> books;
 	private TableModelBooks tableModel;
-	private String property;
 
 	public WSBManager() {
 		initArrayList();
@@ -69,9 +71,9 @@ public class WSBManager extends JFrame {
 	}
 
 	private void showGUI() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setPreferredSize(new Dimension(800, 600));
-		setExtendedState(JFrame.MAXIMIZED_BOTH);
+		setExtendedState(Frame.MAXIMIZED_BOTH);
 		setTitle(appName);
 		setLayout(new BorderLayout());
 		add(spane, BorderLayout.CENTER);
