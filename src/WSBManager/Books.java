@@ -54,9 +54,9 @@ public class Books {
 	 public String getBookRelaseDate() {
 			 return bookRelaseDate.getDate();
 		 }
-	 public String toString(int zamiana) {
-		 String zamiana2;
-		 zamiana2 = (zamiana2+zamiana);
-		 return zamiana2;
+	 
+	 @Override
+	 public String toString() {
+		return bookName+" "+bookCover+" "+bookIsbn+" "+bookType;
 	 }
 }
