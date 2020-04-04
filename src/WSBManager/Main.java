@@ -4,7 +4,6 @@
 package WSBManager;
 
 import java.util.Properties;
-
 import javax.swing.SwingUtilities;
 
 public class Main {
@@ -14,9 +13,9 @@ public class Main {
 
 			@Override
 			public void run() {
-//				new WSBManager();
-				Properties prop = new WSBproperties().getProp();
-				Sqlconnector sql = new Sqlconnector(prop);
+				new WSBManager();
+//				Properties prop = new WSBproperties().getProp();
+//				Sqlconnector sql = new Sqlconnector(prop);
 			}
 		});
 	}
