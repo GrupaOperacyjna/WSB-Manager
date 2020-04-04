@@ -35,7 +35,7 @@ public class Sqlconnector {
             conn = DriverManager.getConnection(url);  
               
             System.out.println("Connection to SQLite has been established.");  
-              
+            //todo: jak to dzia³a
         } catch (SQLException e) {  
             System.out.println(e.getMessage());  
         } finally {  
