@@ -4,41 +4,41 @@
 package WSBManager;
 /**
  * 
- * Obiekt <code>Authors</code> reprezentuje autorów ksi¹¿ek. 
- * Obiekt tej klasy zbiera i przechowuje podstawowe informacje, takie jak: imiê, nazwisko i data urodzenia autora.
+ * Obiekt <code>Authors</code> reprezentuje autorow ksiazek. 
+ * Obiekt tej klasy zbiera i przechowuje podstawowe informacje, takie jak: imie, nazwisko i data urodzenia autora.
  */
 public class Authors {
 	/**
-	 * Zmienne przechowuj¹ce dane autora.
+	 * Zmienne przechowujace dane autora.
 	 */
 	private int born;
 	private String name;
 	private String surname;
 	
 	/**
-	 * Metoda pobiera datê urodzenia.
+	 * Metoda pobiera date urodzenia.
 	 * @return Zwraca date urodzenia.
 	 */
 	public int getBorn() {
 		return born;
 	}
 	/**
-	 * Metoda przypisuj¹ca datê urodzenia do obiektu.
-	 * @param born - ustawia datê urodznia.
+	 * Metoda przypisujaca date urodzenia do obiektu.
+	 * @param born - ustawia date urodzenia.
 	 */
 	public void setBorn(int born) {
 		this.born = born;
 	}
 	/**
-	 * Metoda pobiera imiê autora.
-	 * @return zwraca imiê autora.
+	 * Metoda pobiera imie autora.
+	 * @return zwraca imie autora.
 	 */
 	public String getName() {
 		return name;
 	}
 	/**
-	 * Metoda przypisuj¹ca imiê autora do obiektu.
-	 * @param name ustawia imiê autora.
+	 * Metoda przypisujaca imie autora do obiektu.
+	 * @param name ustawia imie autora.
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -51,14 +51,14 @@ public class Authors {
 		return surname;
 	}
 	/**
-	 * Metoda przypisuj¹ca nazwisko autora do obiektu.
+	 * Metoda przypisujaca nazwisko autora do obiektu.
 	 * @param surname ustawia nazwisko.
 	 */
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
 	/**
-	 * Konstruktor domyœlny
+	 * Konstruktor domyslny
 	 */
 	public Authors() {
 		this.born=0;
@@ -66,9 +66,9 @@ public class Authors {
 		this.surname="Empty Surname";
 	}
 	/**
-	 * Konstruktor tworz¹cy obiekt Authors z dat¹ urodzenia, imieniem i nazwiskiem.
-	 * @param born ustawia datê urodzenia.		
-	 * @param name ustawia imiê autora.
+	 * Konstruktor tworzacy obiekt Authors z data urodzenia, imieniem i nazwiskiem.
+	 * @param born ustawia date urodzenia.		
+	 * @param name ustawia imie autora.
 	 * @param surname ustawia nazwisko autora.
 	 */
 
@@ -78,7 +78,7 @@ public class Authors {
 		this.surname=surname;
 	}
 	/**
-	 * Metoda zwracaj¹ca wszystkie dane w obiekcie String.
+	 * Metoda zwracajaca wszystkie dane w obiekcie String.
 	 */
 	@Override
 	public String toString() {
